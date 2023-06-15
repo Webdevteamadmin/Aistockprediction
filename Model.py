@@ -40,7 +40,6 @@ async def predict(stock_request: StockRequest):
     scaler = MinMaxScaler(feature_range=(0, 1))
     scaled_data = scaler.fit_transform(dataset)
 
-    # Define the sequence length and split the data into training and testing sets
     seq_len = 100
     train_size = int(len(scaled_data) * 0.9)
     train_data = scaled_data[:train_size]
